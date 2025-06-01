@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Trivia Quest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"/> <!-- Got a custom font to match the game-->
+  <link rel="stylesheet" href="style2.css"/>
+  <link rel="icon" href="assets/favicon-32x32.png" type="image/x-icon"/>
+</head>
+<body>
+  <div class="container" id="app">
+
+    <!-- Start Screen for the trivia game -->
+    <div id="start-screen">
+      <h1>Theme Quest</h1>
+
+      <!-- Dropdowns to customize the difficulty -->
+      <label for="difficulty">Select Difficulty</label>
+      <select id="difficulty" name="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium" selected>Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+
+      <!-- Dropdowns for the number of questions -->
+      <label for="amount">Number of Questions</label>
+      <select id="amount" name="amount">
+        <option value="5">5</option>
+        <option value="10" selected>10</option>
+        <option value="20">20</option>
+      </select>
+
+      <!-- Dropdowns to select the category of questions to match the users interest -->
+      <label for="category">Select Category</label>
+      <select id="category" name="category" disabled>
+        <option>Loading categories...</option>
+      </select>
+
+      <!-- Dropdowns to select the type of questions -->
+      <label for="type">Select Question Type</label>
+      <select id="type" name="type">
+        <option value="">Any Type</option>
+        <option value="multiple" selected>Multiple Choice</option>
+        <option value="boolean">True / False</option>
+      </select>
+
+      <!-- Button to start the game -->
+      <button class="btn-start" id="startGameBtn">Start Game</button>
+      <div class="loading" id="loadingMessage"></div>
+    </div>
+
+    <!-- Quiz Screen to display the questions and answers -->
+    <div id="quiz-screen" style="display:none;">
+      <div class="question-number" id="questionNumber"></div>
+
+      <!-- Progress bar to show the progress of the quiz -->
+      <div class="progress-bar-container" aria-label="Progress Bar">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <div class="question-text" id="questionText"></div>
+      <div id="answersContainer"></div>
+
+      <!-- Timer to show the time remaining for the player -->
+      <div class="timer" id="timer"></div>
+    </div>
+
+    <!-- Score Screen to display the score achieved by the player -->
+    <div id="score-screen" style="display:none;">
+      <h1>Quiz Completed!</h1>
+      <div class="score-screen" id="scoreText"></div>
+      <div class="score-breakdown" id="scoreBreakdown"></div>
+      <div class="personal-best" id="personalBestText"></div>
+      <button class="btn-start" id="restartBtn">Play Again</button>
+    </div>
+
+  </div>
+
+  <!-- Leaderboard container placeholder(not immplemented due to little understanding of syncing data) -->
+  <div id="leaderboard"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

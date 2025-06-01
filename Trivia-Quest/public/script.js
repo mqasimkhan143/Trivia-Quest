@@ -22,7 +22,7 @@ function loadLeaderboard() {
   // Future implementation if needed
 }
 
-// Placeholder function for playing audio during the game (not implemented)
+// Placeholder function for playing audio during the game
 function playAudioPlaceholder(type) {
   console.log(`Audio placeholder called for: ${type}`);
 }

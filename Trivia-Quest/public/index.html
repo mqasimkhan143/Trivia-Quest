@@ -33,7 +33,7 @@
         const result = await signInWithPopup(auth, provider);
         const user = result.user;
         alert(`Welcome, ${user.displayName}!`);
-        window.location.href = "Mainscreen.html";
+        window.location.href = "mainscreen.html";
       } catch (error) {
         console.error("Google sign-in failed", error);
         alert("Google sign-in failed.");
